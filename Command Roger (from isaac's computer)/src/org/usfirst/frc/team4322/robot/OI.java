@@ -13,10 +13,13 @@ import org.usfirst.frc.team4322.robot.commands.IsaacToggle;
 public class OI {
 	public static boolean isaac = true;
 	public Joystick gamepadDr = new Joystick(0);
+	public Joystick gamepadSh = new Joystick(1);
 	
 	public OI() {
-		Button buttonA = new JoystickButton(gamepadDr, 0);
-		buttonA.whenPressed(new IsaacToggle());
+		Button drButtonA = new JoystickButton(gamepadDr, 0);
+		//Button shButtonA = new JoystickButton(gamepadSh, 0);
+		
+		drButtonA.whenReleased(new IsaacToggle());
 	}
 	
 	
