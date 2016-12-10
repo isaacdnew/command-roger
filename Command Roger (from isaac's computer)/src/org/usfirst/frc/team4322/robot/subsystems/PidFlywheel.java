@@ -16,12 +16,16 @@ public class PidFlywheel extends PIDSubsystem {
 	// Initialize your subsystem here
     public PidFlywheel() {
     	super ("PidFlywheel", 0.0, 0.0, 0.0);
-    	flywheelEncoder = new Encoder(1, 2);
+    	flywheelEncoder = new Encoder(0, 1);
     	flywheelMotor = new VictorSP(5);
         // Use these to get going:
         // setSetpoint() -  Sets where the PID controller should move the system
         //                  to
         // enable() - Enables the PID controller.
+    }
+    
+    public void setTargetSpeed(double rpm) {
+    	setSetpoint(rpm);
     }
     
     public void initDefaultCommand() {
