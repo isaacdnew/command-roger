@@ -20,9 +20,11 @@ public class Intake extends Subsystem {
 	}
 	
 	public void pullIn() {
+		intakeMotor.set(1);
+		
 		while (ballDetector.get()) {
-			intakeMotor.set(1);
 		}
+		
 		Timer.delay(0.1);
 		intakeMotor.set(0);
 	}
