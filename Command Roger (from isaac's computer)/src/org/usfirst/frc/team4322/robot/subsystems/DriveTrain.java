@@ -30,14 +30,14 @@ public class DriveTrain extends Subsystem {
         setDefaultCommand(new SwitchableDrive());
     }
     
-    public void isaacDrive (double power, double rotationCw) {
+    public void isaacDrive(double power, double rotationCw) {
     	motorRF.set(power + rotationCw);
     	motorRB.set(power + rotationCw);
     	motorLF.set(-power + rotationCw);
     	motorLB.set(-power + rotationCw);
     }
     
-    public void tankDrive (double rightPower, double leftPower) {
+    public void tankDrive(double rightPower, double leftPower) {
     	motorLF.set(leftPower);
     	motorLB.set(leftPower);
     	motorRF.set(-rightPower);

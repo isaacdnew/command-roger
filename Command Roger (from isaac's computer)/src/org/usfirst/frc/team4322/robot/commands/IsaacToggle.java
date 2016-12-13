@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4322.robot.commands;
 
-import org.usfirst.frc.team4322.robot.OI;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -30,15 +29,7 @@ public class IsaacToggle extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	OI.isaac = !OI.isaac;
-    	
-    	if (OI.isaac) {
-    		System.out.println("Now Isaac Drive");
-    	}
-    	else {
-    		System.out.println("Now Tank Drive");
-    	}
-    	
+    	SwitchableDrive.toggleIsaac();
     }
 
     // Called when another command which requires one or more of the same

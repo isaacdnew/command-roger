@@ -12,12 +12,12 @@ import org.usfirst.frc.team4322.robot.commands.IsaacToggle;
  */
 public class OI {
 	public static boolean isaac = true;
-	public Joystick gamepadDr = new Joystick(0);
-	public Joystick gamepadSh = new Joystick(1);
+	public Joystick gamepadDr = new Joystick(RobotMap.gamepadDr);
+	public Joystick gamepadSh = new Joystick(RobotMap.gamepadSh);
 	
 	public OI() {
-		Button drButtonA = new JoystickButton(gamepadDr, 0);
-		//Button shButtonA = new JoystickButton(gamepadSh, 0);
+		Button drButtonA = new JoystickButton(gamepadDr, RobotMap.drButtonA);
+		//Button shButtonA = new JoystickButton(gamepadSh, RobotMap.shButtonA);
 		
 		drButtonA.whenReleased(new IsaacToggle());
 	}

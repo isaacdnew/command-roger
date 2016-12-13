@@ -18,8 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	
 	public static final DriveTrain drivetrain = new DriveTrain();
 	public static final Intake intake = new Intake();
 	public static final PidFlywheel pidFlywheel = new PidFlywheel();
@@ -36,7 +35,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
 		chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new ExampleCommand());
+        chooser.addDefault("Default Auto", new Autonomous0());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Autonomous Program", chooser);
     }
