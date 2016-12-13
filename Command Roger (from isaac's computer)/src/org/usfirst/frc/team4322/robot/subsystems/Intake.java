@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * This is the intake belt that pulls in the boulder.
  */
+
 public class Intake extends Subsystem {
 	
 	SpeedController intakeMotor;
