@@ -7,13 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Autonomous0 extends Command {
-	
-	public Autonomous0() {
+public class TurnOnFlywheel extends Command {
+
+    public TurnOnFlywheel() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.drivetrain);
-    	requires(Robot.intake);
+    	requires(Robot.pidFlywheel);
     }
 
     // Called just before this Command runs the first time

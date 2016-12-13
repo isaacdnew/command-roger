@@ -7,18 +7,16 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Autonomous0 extends Command {
-	
-	public Autonomous0() {
+public class FeedBall extends Command {
+
+    public FeedBall() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.drivetrain);
     	requires(Robot.intake);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -27,11 +25,12 @@ public class Autonomous0 extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.intake.feedToFlywheel();
     }
 
     // Called when another command which requires one or more of the same
