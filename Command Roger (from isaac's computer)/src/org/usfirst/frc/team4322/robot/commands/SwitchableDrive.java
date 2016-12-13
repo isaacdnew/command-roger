@@ -25,10 +25,10 @@ public class SwitchableDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (OI.isaac) {
-    		Robot.drivetrain.isaacDrive(Robot.oi.gamepadDr.getY(), Robot.oi.gamepadDr.getRawAxis(5));
+    		Robot.drivetrain.isaacDrive(Robot.oi.gamepadDr.getY(), Robot.oi.gamepadDr.getRawAxis(4));
     	}
     	else {
-    		Robot.drivetrain.tankDrive(Robot.oi.gamepadDr.getY(), Robot.oi.gamepadDr.getRawAxis(4));
+    		Robot.drivetrain.tankDrive(Robot.oi.gamepadDr.getY(), Robot.oi.gamepadDr.getRawAxis(5));
     	}
     	
     }

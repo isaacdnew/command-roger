@@ -8,8 +8,9 @@ package org.usfirst.frc.team4322.robot;
 public class RobotMap {
 	public static int intakeMotor = 0;
 	public static int gamepadDr = 0;
+	public static int drButtonA = 1;
 	public static int gamepadSh = 1;
-	public static int buttonA = 1;
+	public static int shButtonA = 1;
 		
 	public static int motorRF = 2;
 	public static int motorRB = 3;
