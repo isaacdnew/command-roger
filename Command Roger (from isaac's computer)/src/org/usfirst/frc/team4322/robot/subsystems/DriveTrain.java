@@ -30,14 +30,55 @@ public class DriveTrain extends Subsystem {
         setDefaultCommand(new SwitchableDrive());
     }
     
-    public void isaacDrive(double power, double rotationCw) {
-    	motorRF.set(power + rotationCw);
-    	motorRB.set(power + rotationCw);
-    	motorLF.set(-power + rotationCw);
-    	motorLB.set(-power + rotationCw);
+    public void isaacDrive(double throttleAxis, double turningAxis) {
+    	
+    	// make the turning sensitivity decrease at higher throttles
+    	double rotationCw = turningAxis / (1 + throttleAxis);
+    	
+    	double rightSpeed = throttleAxis + rotationCw;
+    	double leftSpeed = -throttleAxis + rotationCw;
+    	
+    	if (leftSpeed < -1) {
+    		leftSpeed = -1;
+    	}
+    	
+    	if (leftSpeed > 1) {
+    		leftSpeed = 1;
+    	}
+    	
+    	if (rightSpeed < -1) {
+    		rightSpeed = -1;
+    	}
+    	
+    	if (rightSpeed > 1) {
+    		rightSpeed = 1;
+    	}
+    	
+    	
+    	motorRF.set(rightSpeed);
+    	motorRB.set(rightSpeed);
+    	motorLF.set(leftSpeed);
+    	motorLB.set(leftSpeed);
     }
     
     public void tankDrive(double rightPower, double leftPower) {
+    	
+    	if (rightPower < -1) {
+    		rightPower = -1;
+    	}
+    	
+    	if (rightPower > 1) {
+    		rightPower = 1;
+    	}
+    	
+    	if (rightPower < -1) {
+    		rightPower = -1;
+    	}
+    	
+    	if (rightPower > 1) {
+    		rightPower = 1;
+    	}
+    	
     	motorLF.set(leftPower);
     	motorLB.set(leftPower);
     	motorRF.set(-rightPower);
