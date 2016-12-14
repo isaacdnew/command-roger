@@ -25,6 +25,9 @@ public class Intake extends Subsystem {
 	}
 	
 	public void operateWith(Joystick joy, int pullAxis, int pushAxis) {
+		if (pullAxis == pushAxis) {
+			throw new IllegalArgumentException("The push and pull axes must be different from each other!");
+		}
 		
 		double speed = joy.getRawAxis(pullAxis) - joy.getRawAxis(pushAxis);
 		

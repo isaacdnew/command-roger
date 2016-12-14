@@ -22,7 +22,7 @@ public class ManualIntake extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.intake.operateWith(Robot.oi.gamepadSh, 2, 3);
+    	Robot.intake.operateWith(Robot.oi.gamepadSh, 3, 2);
     }
 
     // Make this return true when this Command no longer needs to run execute()
