@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
 		chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new Autonomous0());
+        chooser.addDefault("Default Auto: Autonomous0", new Autonomous0());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Autonomous Program", chooser);
     }
@@ -45,7 +45,7 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-
+    	System.out.println("Disabled.");
     }
 	
 	public void disabledPeriodic() {
@@ -92,6 +92,7 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        System.out.println("Now Isaac Drive.");
     }
 
     /**
